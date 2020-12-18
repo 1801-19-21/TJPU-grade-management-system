@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+<!--  -->
+{% block styles %} {% endblock %}
+
+<!--  -->
+{% block page_content %}
+<div class="paper">
+    <form action="/action/schedule/edit/{{schedule_sn}}" method="post">
+        课程：<input type="text" name="course_sn" value="{{course_sn}}" />
+        学期: <input type="text" name="term" value="{{term}}" />
+        日期: <input type="text" name="date" value="{{date}}" />
+        时间: <input type="text" name="time" value="{{time}}" />
+        地点: <input type="text" name="site" value="{{site}}" />
+        <input type="submit" value="修改" />
+    </form>
+    <hr />
+    <a href="/schedule"> 回到课程计划列表 </a>
+</div>
+{% endblock %}

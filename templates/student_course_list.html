@@ -1,0 +1,76 @@
+{% extends "base.html" %} {% block styles %}
+<link href="/student_course_list.css" rel="stylesheet" />
+{% endblock %} {% block page_content %}
+<div class="paper">
+    <form class="student_course-form" action="/action/student_course/add" method="post">
+        <label>学生：</label>
+        <select name="student_sn">
+            <option value="">--选择--</option>
+            {% for stu in students %}
+            <option value="{{stu.student_sn}}">
+                {{stu.student_name}}({{stu.student_sn}})
+            </option>
+            {% endfor %}
+        </select>
+        <label>学期:</label>
+        <select name="term">
+            <option value="">--选择--</option>
+
+            <option value="2019-2020第一学期">
+                2019-2020第一学期
+            </option>
+            <option value="2019-2020第二学期">
+                2019-2020第二学期
+            </option>
+            <option value="2010-2021第一学期">
+                2010-2021第一学期
+            </option>
+            <option value="2010-2021第二学期">
+                2010-2021第二学期
+            </option>
+            
+        </select>
+
+        <label>课程：</label>
+        <select name="schedule_sn">
+            <option value="">--选择--</option>
+            {% for sch in schedules %}
+            <option value="{{sch.schedule_sn}}">
+                {{sch.course_name}} ({{sch.term}} {{sch.date}} {{sch.time}})
+            </option>
+            {% endfor %}
+        </select>
+
+        <input type="submit" value="确定" />
+    </form>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>课程</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.student_name }}</td>
+                <td>{{ item.course_name}} {{item.term}} {{item.date}} {{item.time}} {{item.site}}</td>
+
+                <td>
+                    <div class="ctrlbar">
+                        <div class="btn">
+                            <a href="/student_course/delete/{{item.student_sn}}/{{item.schedule_sn}}">
+                                退课
+                            </a>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

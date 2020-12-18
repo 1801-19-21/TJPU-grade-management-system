@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+<!--  -->
+{% block styles %}
+<link href="/search_list.css" rel="stylesheet" />
+{% endblock %}
+
+<!--  -->
+{% block page_content %}
+<div class="panel">
+
+<div class="dialog">
+    <div class="paper">
+        <table>
+            <tr>
+                <th>姓名</th>
+                <th>课程</th>
+                <th>学期</th>
+                <th>成绩</th>
+               
+            </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.student_name }}</td>
+                <td>{{ item.course_name }}</td>
+                <td>{{ item.term }}</td>
+                <td>{{ item.grade }}</td>
+                <td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="btn">
+            <a href="/search">返回</a>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+
+form.student_course-form > input, form.student_course-form > select {
+    padding: 5px;
+    font-size: 1.2em;
+}
+
+form.student_course-form > select {
+    min-width: 8em;
+}
+
+
+.ctrlbar {
+    display: flex;
+    padding: 0 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.ctrlbar > .btn {
+    padding: 2px 15px;
+    background-color: darkcyan;
+}
+
+
