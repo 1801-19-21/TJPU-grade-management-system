@@ -54,13 +54,13 @@
         </thead>
         <tbody>
             {% for item in items %}
-            <tr>
+            <tr style="text-align: center">
                 <td>{{ item.student_name }}</td>
                 <td>{{ item.course_name}} {{item.term}} {{item.date}} {{item.time}} {{item.site}}</td>
 
                 <td>
                     <div class="ctrlbar">
-                        <div class="btn">
+                        <div class="btn" style="background-color: hsl(329 45% 38%)">
                             <a href="/student_course/delete/{{item.student_sn}}/{{item.schedule_sn}}">
                                 退课
                             </a>

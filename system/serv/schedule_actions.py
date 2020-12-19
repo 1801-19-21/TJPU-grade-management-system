@@ -71,12 +71,8 @@ async def edit_schedule_action(request):
 
 
 @web_routes.post('/action/schedule/delete/{schedule_sn}')
-
 def delete_schedule_action(request):
-
     schedule_sn = request.match_info.get("schedule_sn")
-    print(schedule_sn)
-    print(123)
     if schedule_sn is None:
         return web.HTTPBadRequest(text="schedule_sn must be required")
 
@@ -85,7 +81,6 @@ def delete_schedule_action(request):
         DELETE FROM course_schedule
             WHERE schedule_sn = %(schedule_sn)s
         """, dict(schedule_sn=schedule_sn ))
-    print(123)
     return web.HTTPFound(location="/schedule")
 
 

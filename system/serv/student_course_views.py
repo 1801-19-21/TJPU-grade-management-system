@@ -17,9 +17,9 @@ async def view_list_student_course(request):
 
 
         db.execute("""
-        SELECT schedule_sn,course_sn, term, date, time, site   
-        FROM course_schedule as cs
-             
+        SELECT schedule_sn,course_sn, term, date, time, site , c.name as course_name
+        FROM   course_schedule as cs
+        INNER JOIN course as c ON cs.course_sn = c.sn
         """)
         schedules = list(db)
 

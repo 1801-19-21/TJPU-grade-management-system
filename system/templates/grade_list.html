@@ -44,7 +44,9 @@
                 2020-2021第二学期
             </option>
         </select>
+    <form>
 
+    <form class="grade-form" action="/action/grade/add" method="post">
 
         <label>成绩：</label>
         <input type="text" name="grade" />
@@ -53,7 +55,7 @@
     </form>
     <hr />
     <table>
-        <tr>
+        <tr style="background-color: hsl(306 40% 20%)">
             <th>姓名</th>
             <th>课程</th>
             <th>学期</th>
@@ -61,19 +63,19 @@
             <th>操作</th>
         </tr>
         {% for item in items %}
-        <tr>
+        <tr style="text-align: center">
             <td>{{ item.student_name }}</td>
             <td>{{ item.course_name }}</td>
             <td>{{ item.term }}</td>
             <td>{{ item.grade }}</td>
             <td>
                 <div class="ctrlbar">
-                    <div class="btn">
+                    <div class="btn" style="background-color: hsl(329 45% 38%)" >
                         <a href="/grade/edit/{{item.student_sn}}/{{item.course_sn}}/{{item.term}}">
                             修改
                         </a>
                     </div>
-                    <div class="btn">
+                    <div class="btn" style="background-color: hsl(329 45% 38%)">
                         <a href="/grade/delete/{{item.student_sn}}/{{item.course_sn}}/{{item.term}}">
                             删除
                         </a>

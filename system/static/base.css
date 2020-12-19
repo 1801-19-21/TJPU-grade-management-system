@@ -43,6 +43,7 @@ body {
 .page-body > .sidebar {
     flex: 0 0 12rem;
     background-color: hsl(307 38% 85%);
+    
 }
 
 .page-body > .page-content {
@@ -60,6 +61,7 @@ body {
 }
 
 .sidebar > ul {
+    font-size: 1.9rem;
     list-style: none;
     margin-block-start: unset;
     margin-block-end: unset;
@@ -67,14 +69,12 @@ body {
     padding-top: 1rem;
     padding-left: 1rem;
 
-    font-size: 2.1rem;
 }
 
 .sidebar > ul > li {
     color: hsl(306 40% 25%);
     letter-spacing: 0.1em;
     padding: 0.1em 0.5em;
-
     user-select: none;
     position: relative;
 }

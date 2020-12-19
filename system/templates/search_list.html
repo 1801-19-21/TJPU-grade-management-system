@@ -9,8 +9,9 @@
 
 {% block page_content %}
 <div class="paper">
-    <form class="grade-form" action="/action/search/edit_stu" method="post">
-        <div class="stu_search">学生查询</div>
+    <form class="search-form" action="/action/search/edit_stu" 
+          method="post" style="background-color: hsl(306 40% 90%)">
+        <div class="stu_search" style="background-color: hsl(307 38% 85%) ;font-size: 1.3em">学生查询</div>
         <label>学生：</label>
         <select name="student_sn">
             <option value="">--选择--</option>
@@ -22,9 +23,11 @@
         </select>
         <input type="submit" value="查询"/>
     </form>
+    <form> </form>
 
-    <form class="grade-form" action="/action/search/edit_com" method="post">
-        <div class="com_search">综合查询</div>
+    <form class="search-form" action="/action/search/edit_com" method="post"
+          style="background-color: hsl(306 40% 90%)">
+        <div class="com_search" style="background-color: hsl(307 38% 85%);font-size: 1.3em">综合查询</div>
         <label>课程：</label>
         <select name="course_sn">
             <option value="">--选择--</option>
@@ -51,7 +54,7 @@
                 2020-2021第二学期
             </option>
         </select>
-        <input type="submit" value="查询"/>
+        <input type="submit" value="查询" />
     </form>
 
     

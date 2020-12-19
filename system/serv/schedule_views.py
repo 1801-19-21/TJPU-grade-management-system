@@ -9,7 +9,6 @@ async def view_list_schedules(request):
         SELECT sn AS course_sn, name as course_name FROM course ORDER BY name
         """)
         courses = list(db)
-        print(courses)
         db.execute("""
         SELECT  s.schedule_sn,
             s.course_sn, 
@@ -45,7 +44,6 @@ def view_schedule_editor(request):
         """, dict(schedule_sn=schedule_sn))
 
         record = db.fetch_first()
-        print(record)
     
 
 
@@ -64,7 +62,6 @@ def view_schedule_editor(request):
 @web_routes.get("/schedule/delete/{schedule_sn}")
 def schedule_deletion_dialog(request):
     schedule_sn = request.match_info.get("schedule_sn")
-    print(schedule_sn)
     if schedule_sn is None:
         return web.HTTPBadRequest(text="schedule_sn must be required")
 
@@ -88,9 +85,8 @@ def schedule_deletion_dialog(request):
         """, dict(schedule_sn=schedule_sn))
 
         record = db.fetch_first()
-        print(record)
 
     if record is None:
-        return web.HTTPNotFound(text=f"no such course,term,date,time,site:  schedule_sn={schedule_sn}")
+        return web.HTTPNotFound(text=f"no such course,term,date,time,site:  schedule_sn={record.course_sn}")
 
-    return render_html(request, 'schedule_dialog_deletion.html', record=record)
+    return render_html(request, 'schedule_dialog_deletion.html', record=record,schedule_sn=schedule_sn)

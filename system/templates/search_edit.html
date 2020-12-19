@@ -12,7 +12,7 @@
 <div class="dialog">
     <div class="paper">
         <table>
-            <tr>
+            <tr style="background-color: hsl(306 40% 20%)">
                 <th>姓名</th>
                 <th>课程</th>
                 <th>学期</th>
@@ -20,7 +20,7 @@
                
             </tr>
             {% for item in items %}
-            <tr>
+            <tr style="text-align: center">
                 <td>{{ item.student_name }}</td>
                 <td>{{ item.course_name }}</td>
                 <td>{{ item.term }}</td>

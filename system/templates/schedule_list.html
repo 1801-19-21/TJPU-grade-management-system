@@ -26,17 +26,14 @@
         <select name="term">
             <option value="">--选择--</option>
             
-            <option value="2019-2020第一学期">
-                2019-2020第一学期
-            </option>
-            <option value="2019-2020第二学期">
-                2019-2020第二学期
-            </option>
-            <option value="2010-2021第一学期">
-                2010-2021第一学期
-            </option>
-            <option value="2010-2021第二学期">
-                2010-2021第二学期
+            <option value="2019-2020第一学期">2019-2020第一学期</option>
+            
+            <option value="2019-2020第二学期">2019-2020第二学期</option>
+
+            <option value="2020-2021第一学期">2020-2021第一学期</option>
+
+            <option value="2020-2021第二学期">2020-2021第二学期</option>
+           
             </option>
             
         </select>
@@ -48,9 +45,18 @@
             <option value="周一">周一</option>
             
             <option value="周二">周二</option>
+
             <option value="周三">周三</option>
+
             <option value="周四">周四</option>
+
             <option value="周五">周五</option>
+
+            <option value="周六">周六</option>
+
+            <option value="周日">周日</option>
+            
+            </option>
             
         </select>
 
@@ -61,23 +67,27 @@
             <option value="第一大节">第一大节</option>
             
             <option value="第二大节">第二大节</option>
-            
+
             <option value="第三大节">第三大节</option>
+
             <option value="第四大节">第四大节</option>
 
+            <option value="第五大节">第五大节</option>
+            
+            </option>
 
         </select>
 
         <label>地点：</label>
-        
-            <input type="text" name="site" />
-      
+        <input type="text" name="site" />
+
+    
 
         <input type="submit" value="添加计划" />
     </form>
     <hr />
     <table>
-        <tr>
+        <tr style = "background-color:hsl(306 40% 20%)">
             <th>计划</th>
             <th>课程</th>
             <th>学期</th>
@@ -86,7 +96,7 @@
             <th>地点</th>
         </tr>
         {% for item in items %}
-        <tr>
+        <tr style="text-align: center">
             <td>{{ item.schedule_sn }}</td>
             <td>{{ item.schedule_name }}</td>
             <td>{{ item.term }}</td>
@@ -95,12 +105,12 @@
             <td>{{ item.site }}</td> 
             <td>
                 <div class="ctrlbar">
-                    <div class="btn">
+                    <div class="btn style="background-color: hsl(329 45% 38%)"">
                         <a href="/schedule/edit/{{item.schedule_sn}}">
                             修改
                         </a>
                     </div>
-                    <div class="btn">
+                    <div class="btn style="background-color: hsl(329 45% 38%)"">
                         <a href="/schedule/delete/{{item.schedule_sn}}">
                             删除
                         </a>
